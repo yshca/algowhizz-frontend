@@ -1,0 +1,66 @@
+.testimonials {
+    padding-top: 20px;
+    height: 80vh;
+}
+
+.heading-testimonials {
+    color: #FE9920;
+    font-weight: 800;
+    font-size: 30px;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 20px;
+   
+}
+
+.line {
+   
+   background: #FE9920;
+   height: 2px;
+   margin-left: 42%;
+    margin-right: 42%;
+    margin-bottom: 40px;
+}
+
+.flexbox-container-3 {
+    display: flex;
+}
+
+.flexbox-container-3 div {
+    border: 1px solid #ccc;
+    height: 50vh;
+    border-radius: 6px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.testimonials-1 {
+    flex: 1;
+}
+
+.testimonials-1:hover {
+    transform: scale(1.06);
+    transition: all 0.3s ease-out;
+    color: #1c2237;
+}
+
+.testimonials-2 {
+    flex: 1;
+}
+
+.testimonials-2:hover {
+    transform: scale(1.06);
+    transition: all 0.3s ease-out;
+    color: #1c2237;
+}
+
+.testimonials-3 {
+    flex: 1;
+}
+
+.testimonials-3:hover {
+    transform: scale(1.06);
+    transition: all 0.3s ease-out;
+    color: #1c2237;
+}
