@@ -21,14 +21,14 @@ function HomePage() {
         <CContainer fluid="true" className="backC" />
         <CContainer fluid="true" className="frontC">
           <CRow className="frontC-row1 u-padding-left u-padding-right">
-            <CCol xs="3" sm="3" md="3" className="frontC-row1-col1">
+            <CCol sm="3" md="3" lg="3" className="frontC-row1-col1">
               <div className="frontC-row1-col1-obj">
                 <p className="heading-primary--main">
-                  <span>&#123;</span> IP <span>&#125;</span>
+                  <span>&#123;</span> AZ <span>&#125;</span>
                 </p>
               </div>
             </CCol>
-            <CCol xs="6" sm="6" md="6" className="frontC-row1-col2">
+            <CCol sm="6" md="6" lg="6" className="frontC-row1-col2">
               <div className="frontC-row1-col2-obj">
                 <a href="#" className="btn2 btn2--white">
                   Problems
@@ -44,7 +44,7 @@ function HomePage() {
                 </a>
               </div>
             </CCol>
-            <CCol xs="3" sm="3" md="3" className="frontC-row1-col3">
+            <CCol sm="3" md="3" lg="3" className="frontC-row1-col3">
               <div className="frontC-row1-col3-obj">
                 <a href="#" className="btn3 btn3--orange">
                   Login
@@ -54,13 +54,13 @@ function HomePage() {
           </CRow>
 
           <CRow className="frontC-row2 u-padding-left u-padding-right">
-            <CCol xs="6" sm="6" md="6" className="frontC-row2-col1">
+            <CCol md="12" lg="6" className="frontC-row2-col1">
               <div className="frontC-row2-col1-obj">
                 <p className="heading-primary--main u-margin-bottom-small">
                   Learn The Expert Way
                 </p>
                 <p className="heading-secondry--main u-margin-bottom-medium">
-                  InterviewPrep is the most suited platform to enhance <br />
+                  AlgoWhizz is the most suited platform to enhance <br />
                   your technical skills required to ace coding interviews.
                 </p>
                 <a href="#" className="btn btn--orange">
@@ -69,7 +69,7 @@ function HomePage() {
               </div>
             </CCol>
 
-            <CCol xs="6" sm="6" md="6" className="frontC-row2-col2">
+            <CCol md="12" lg="6" className="frontC-row2-col2">
               <img src={ip_image} className="frontC-row2-col2-obj" />
             </CCol>
           </CRow>
@@ -80,14 +80,14 @@ function HomePage() {
       {/* section - 2 --------------------------------------------------------------------------------- */}
       <CContainer
         fluid="true"
-        className="section2 u-padding-left u-padding-right"
+        className="section2"
       >
         <div className="section2-head">
-          <p className="heading-primary--sub">Why InterviewPrep ?</p>
+          <p className="heading-primary--sub">Why AlgoWhizz ?</p>
         </div>
         <div className="section2-body">
           <CRow className="section2-body-row">
-            <CCol xs="4" sm="4" lg="4" md="12">
+            <CCol lg="4" md="12">
               <div className="myCard">
                 <div className="myCard-head">
                   <img src={icon2} className="myCard-head-icon" />
@@ -105,7 +105,7 @@ function HomePage() {
                 </div>
               </div>
             </CCol>
-            <CCol xs="4" sm="4" lg="4" md="12">
+            <CCol lg="4" md="12">
               <div className="myCard">
                 <div className="myCard-head">
                   <img src={icon1} className="myCard-head-icon" />
@@ -123,7 +123,7 @@ function HomePage() {
                 </div>
               </div>
             </CCol>
-            <CCol xs="4" sm="4" lg="4" md="12">
+            <CCol lg="4" md="12">
               <div className="myCard">
                 <div className="myCard-head">
                   <img src={icon3} className="myCard-head-icon" />
@@ -229,12 +229,12 @@ function HomePage() {
       {/* footer      --------------------------------------------------------------------------------- */}
       <CContainer fluid="true" className="myFooter">
         <a href="#" className="btn btn--orange myFooter-btn">
-          Kick off your InterviewPrep Now!
+          Kick off AlgoWhizz Now!
         </a>
         <CRow>
           <CCol xs="3" sm="12" md="3" lg="3">
             <p className="heading-primary--main">
-              <span>&#123;</span> InterviewPrep <span>&#125;</span>
+              <span>&#123;</span> AlgoWhizz <span>&#125;</span>
             </p>
             <div className="myFooter-heading">Stay Connected</div>
             <div className="myFooter-body">
