@@ -1,11 +1,10 @@
 .WhyPage {
     height: 100vh;
+    color:black;
 }
 .heading-WhyPage {
     align-content: center;
-    padding-left: 40%;
-    padding-right: 40%;
-    padding-top: 30px;
+    margin: auto;
     padding-bottom: 30px;
     font-size: 30px;
 }
@@ -22,33 +21,28 @@
     border: 1px solid #ccc;
     margin: 10px;
 }
-
-.WhyPage-box-1 {
-    flex: 1;
-    height: 65vh;
+p {
+    margin: auto;
+}
+.box {
+    margin: 10px 10px;
+    padding: 10px 20px;
+    height: 30%;
     border-radius: 8px;
+    border: 1px solid black;
+}
+
+.box-2 {
+    margin: 10px 10px;
+    padding: 10px 20px;
+    height: 30%;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+.col {
     
 }
 
-.WhyPage-box-2 {
-    flex: 1;
-    height: 65vh;
-    border-radius: 8px;
-    
- 
-}
-
-.WhyPage-box-1:hover {
-    transform: scale(1.06);
-    transition: all 0.3s ease-out;
-    color: #1c2237;
-}
-
-.WhyPage-box-2:hover {
-    transform: scale(1.06);
-    transition: all 0.3s ease-out;
-    color: #1c2237;
-}
 
 .WhyPage-box-3:hover {
     transform: scale(1.06);
@@ -56,9 +50,10 @@
     color: #1c2237;
 }
 
-.WhyPage-box-3 {
-    flex: 1;
-    height: 65vh;
+.box-3 {
+    margin: 10px 10px;
+    padding: 10px 20px;
+    height: 30%;
     border-radius: 8px;
-    
+    border: 1px solid black;
 }

@@ -7,11 +7,7 @@ export const Nav = styled.nav`
   height: 80px;
   display: flex;
   justify-content: space-between;
-  padding:  0;/*0.5rem calc((100vw - 1000px) / 2);*/
-  z-index: 10;
-
- 
-   justify-content: flex-start;
+  justify-content: flex-start;
 `;
 
 export const NavLink = styled(Link)`
@@ -20,17 +16,16 @@ export const NavLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
-  height: 100%;
   cursor: pointer;
   float: right;
   &:hover {
     transition: all 0.2s ease-in-out;
-    border-radius: 15%;
-    height: 50px;
+    border-radius: 5%;
+    text-decoration: none;
+    height: 50%;
     background: #fff;
-    color: #010606;
+    color: #262533;
   }
-
   &.active {
     color: #15cdfc;
   }
@@ -39,7 +34,6 @@ export const NavLink = styled(Link)`
 export const Bars = styled(FaBars)`
   display: none;
   color: #fff;
-
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
