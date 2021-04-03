@@ -1,0 +1,677 @@
+// Variables section
+// COLORS
+$color-primary: #110f23;
+$color-primary-light: #302a63;
+
+$color-secondary: #817ac4;
+$color-secondary-light: #f9f9ff;
+
+$color-tertiary: #fe9920;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+// Typography Section
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 62em) {
+      @content;
+    } //900px => converted to 992px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
+
+html {
+  // This defines what 1rem is
+   //1 rem = 10px; 10px/16px = 62.5%
+  font-family: "Flamenco", cursive;
+
+  // @include respond(big-desktop) {
+  //     font-size: 75%; //1rem = 12, 12/16
+  // }
+
+  // @include respond(tab-land) { // width < 1200?
+  //     font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  // }
+
+  // @include respond(tab-port) { // width < 900?
+  //     font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  // }
+
+  // @include respond(phone){
+  //     font-size: 45%;
+  // }
+  font-size: 62.5% !important;
+
+}
+.homepage {
+  font-size: 62.5% !important;
+}
+
+.heading-primary {
+  &--main {
+    font-size: 4.4rem;
+    color: $color-white;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+  }
+
+  &--sub {
+    font-size: 4.4rem;
+    color: $color-primary-light;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+  }
+}
+
+.heading-secondry {
+  display: inline-block;
+  &--main {
+    font-size: 1.8rem;
+    color: $color-white;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+  }
+  &--sub {
+    font-size: 1.8rem;
+    color: $color-primary-light;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+  }
+}
+
+.myContent {
+  display: inline-block;
+  &--main {
+    font-size: 1.6rem;
+    color: $color-primary-light;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+  }
+  &--sub {
+    font-size: 1.6rem;
+    color: $color-grey-dark-2;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+  }
+}
+// Others
+
+// Section Main
+.mainC {
+  padding: 0;
+  position: relative;
+  display: block;
+  height: 90vh;
+  background-color: $color-secondary-light;
+}
+
+.backC {
+  position: absolute;
+  top: 0;
+  display: block;
+  background-image: linear-gradient(
+    to right bottom,
+    #302a63,
+    #272452,
+    #1e1d42,
+    #171732,
+    #110f23
+  );
+  z-index: 100;
+  clip-path: polygon(0 0, 100% 0%, 100% 33%, 0% 100%);
+  @include respond(tab-port){
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  }
+  height: 100%;
+}
+
+.frontC {
+  position: absolute;
+  display: block;
+  top: 0;
+  z-index: 200;
+  height: 100%;
+  &-row1 {
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    padding: 0;
+    top: 0;
+
+    &-col1 {
+      padding: 0;
+      height: 100%;
+      &-obj {
+        display: flex;
+        justify-content: flex-start;
+        align-items: end;
+        width: 100%;
+        height: 100%;
+      }
+     
+    }
+
+    &-col2 {
+      padding: 0;
+      height: 100%;
+      &-obj {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-col3 {
+      padding: 0;
+      height: 100%;
+      &-obj {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-row2 {
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    padding: 0;
+    bottom: 0;
+    &-col1 {
+      padding: 0;
+      height: 100%;
+      &-obj {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        @include respond(tab-port){
+          top: 40%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+        }
+      }
+    }
+
+    &-col2 {
+      padding: 0;
+      height: 100%;
+      &-obj {
+        position: absolute;
+        bottom: 0;
+        width: 90%;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        height: auto;
+      }
+      @include respond(tab-port){
+        display: none ;
+      }
+    }
+  }
+}
+
+// Section-2
+.section2 {
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  justify-content: flex-start;
+  background-color: $color-secondary-light;
+  &-head {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10rem;
+    @include respond(tab-port){
+      margin-bottom: 5rem;
+    }
+  }
+
+  &-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 85%;
+
+    &-row {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+// Section-3
+.section3 {
+  padding: 0;
+  position: relative;
+  display: block;
+  height: 100vh;
+  background-color: $color-primary;
+}
+
+// Section-4
+.section4 {
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+  background-color: $color-secondary-light;
+  &-head {
+    display: flex;
+    height: 15%;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    min-height: 85%;
+    &-img {
+      display: block;
+      width: 50%;
+      min-width: 50rem;
+      height: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &-content {
+      display: flex;
+      width: 50%;
+      position: relative;
+      height: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      .myCard2 {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+}
+
+// Section-5
+.section5 {
+  padding: 0;
+  position: relative;
+  display: block;
+  height: 100vh;
+  background-color: $color-primary;
+}
+
+.myFooter {
+  
+  background-color: $color-primary;
+  display: flex;
+  min-height: 40rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  &-btn {
+    display: inline-block !important;
+    font-size: 2.4rem !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  &-heading {
+    padding: 1rem;
+    font-size: 1.8rem;
+    color: $color-tertiary;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+  }
+
+  &-body {
+    padding: 1rem;
+    padding-bottom:0;
+    text-align: justify;
+    display: inline-block;
+    font-size: 1.6rem;
+    color: $color-white;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+  }
+
+  .heart{
+    color : #ff6a80;
+    font-size: 2rem
+  }
+}
+
+// Components
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    padding: 0.3rem 1rem;
+    display: inline-block;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.8rem;
+    color: $color-primary;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.2) scaleY(1.4);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--orange {
+    background-color: $color-tertiary;
+    color: $color-primary;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--white {
+    background-color: none;
+    color: $color-primary;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn2 {
+  &,
+  &:link,
+  &:visited {
+    padding: 0.3rem 2rem;
+    display: inline-block;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.8rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    background-color: $color-white;
+    color: $color-primary;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.2) scaleY(1.4);
+    }
+  }
+
+  &--white {
+    color: $color-white;
+  }
+}
+
+.btn3 {
+  &,
+  &:link,
+  &:visited {
+    padding: 0.3rem 2rem;
+    display: inline-block;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.8rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    background-color: $color-tertiary;
+    color: $color-primary;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.2) scaleY(1.4);
+    }
+  }
+
+  &--orange {
+    color: $color-white;
+  }
+}
+
+.myCard {
+  width: 320px;
+  height: 436px;
+  border-radius: 10px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: white;
+  position: relative;
+  border-bottom: 1rem solid $color-primary-light;
+
+  @include respond(tab-port){
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+  }
+
+  &-head {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 158px;
+    &-icon {
+      color: white !important;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 80px;
+      height: 80px;
+    }
+  }
+  &-body {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: space-around;
+    text-align: justify;
+    bottom: 0;
+    width: 100%;
+    height: 278px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .myCard-btn {
+    border: 2px solid $color-primary-light;
+    background-color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+
+  &:hover {
+    border-color: $color-secondary;
+    transform: scale(1.1);
+
+    .myCard-btn {
+      background-color: $color-primary-light;
+      color: white;
+    }
+  }
+}
+
+.myCard2 {
+  height: 50rem;
+  width: 50rem;
+  border-radius: 1rem;
+  background-image: url(../images/bg.svg);
+  background-size: cover;
+  padding: 5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  &-head {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-family: "Handlee", cursive;
+  }
+  &-body {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-family: "Handlee", cursive;
+  }
+
+  &-logo {
+    display: block;
+    height: 8rem;
+    width: auto;
+  }
+}
+// utilities
+.u-margin-bottom-small {
+  margin-bottom: 1rem !important;
+}
+
+.u-margin-up-small {
+  margin-up: 1rem !important;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 2rem !important;
+}
+
+.u-margin-up-medium {
+  margin-up: 2rem !important;
+}
+
+.u-padding-left {
+  padding-left: 20rem !important;
+  @include respond(tab-land){
+    padding-left: 5rem !important;
+  }
+}
+
+.u-padding-right {
+  padding-right: 20rem !important;
+  @include respond(tab-land){
+    padding-right: 5rem !important;
+  }
+}
